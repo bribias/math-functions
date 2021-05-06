@@ -63,8 +63,8 @@ export function sumAndMultiplyThreeNumbers(a, b, c) { //eslint-disable-line
     const multTwoNumbers = multiply(a, b);
     const multThreeNumbers = multiply(multTwoNumbers[0], c);
 
-    const sumString = a + 'and' + b + 'and' + c + 'sum to ' + sumThreeNumbers[0] + '.';
-    const multString = 'The product of ' + a + 'and ' + b + 'and ' + c + 'is ' + multThreeNumbers[0] + '.';
+    const sumString = a + ' and ' + b + ' and ' + c + ' sum to ' + sumThreeNumbers[0] + '.';
+    const multString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multThreeNumbers[0] + '.';
 
     return [
         sumThreeNumbers[0],
@@ -93,6 +93,13 @@ to use the + operator for string concatenation.
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
+    
+    const sumNumbers1 = sum(sumArr[0], sumArr[1])[0];
+    const result = sum(sumNumbers1, sumArr[2])[0];
+
+    const sentenceArray = sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and ' + result + ' is their sum.';
+
+    return [result, sentenceArray];
 
 }
 
@@ -116,7 +123,12 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
-
+    let productOfArray = 1;
+    for(let i = 0; i < multArr.length; i++) {
+        productOfArray = multiply(productOfArray, multArr[i])[0];
+    }
+    const multString = 'The numbers ' + multArr + ' have a product of ' + productOfArray + '.';
+    return [productOfArray, multString];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -136,9 +148,9 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 This function should be dynamic, accepting an array of any length.
 */
 
-export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+// export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
-}
+// }
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
-// You're done! Submit the link to the repo following the instructions in Canvas.
+// // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// // You're done! Submit the link to the repo following the instructions in Canvas.
